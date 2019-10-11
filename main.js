@@ -1,23 +1,36 @@
-var field1;
-var field2;
-var result;
-var resultArray;
+var field1,
+    field2,
+    operator,
+    operatorSign,
+    result,
+    resultArray;
 var score = 0;
 var total = 0;
 
 function playGame(){
-    field1 = randomNumber(1,100);
-    field2 = randomNumber(1,100);
-    result = field1 + field2;
+    field1 = randomNumber(20,50);
+    field2 = randomNumber(20,50);
+    operator = randomNumber(1,2);
+
+    switch(operator){
+        case 1: result = field1 + field2;
+                operatorSign = "+";
+                break;
+        case 2: result = field1 - field2;
+                operatorSign = "-";
+                break;
+    }
+
     resultArray = [];
 
     for(var i = 0; i < 3 ; i++){
-        resultArray.push(randomNumber(2,200))
+        resultArray.push(randomNumber(-30,100))
     }
     resultArray.push(result);
     resultArray.sort((a,b)=> 0.5 - Math.random())
     
     document.getElementById("field1").innerHTML = field1;
+    document.getElementById("operator").innerHTML = operatorSign;
     document.getElementById("field2").innerHTML = field2;
     
     for(var i = 1 ; i <= 4 ; i++) {
