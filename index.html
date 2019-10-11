@@ -9,7 +9,8 @@
 </head>
 <body onload="playGame()">
     <div id="quiz">
-        <div class="quiz-content">
+            <div class="quiz-content">
+            <div id="score" class="score">0</div>
             <div class="question">
                 What is the sum of 
                 <span id="field1" class="text-info">5</span> 
@@ -23,7 +24,9 @@
                 <span id="option3" class="option" onclick="checkAnswer(this)">10</span>
                 <span id="option4" class="option" onclick="checkAnswer(this)">10</span>
             </div>
-            <div id="message" class="message"></div>
+            <div class="play">
+                <a onclick="playAgain()" class="play-again">Play Again</a>
+            </div>
         </div>
     </div>
 </body>

@@ -1,12 +1,16 @@
-var field1 = randomNumber(1,100);
-var field2 = randomNumber(1,100);
-var result = field1 + field2;
-var resultArray = [];
-
-var message;
+var field1;
+var field2;
+var result;
+var resultArray;
+var score = 0;
+var total = 0;
 
 function playGame(){
-    
+    field1 = randomNumber(1,100);
+    field2 = randomNumber(1,100);
+    result = field1 + field2;
+    resultArray = [];
+
     for(var i = 0; i < 3 ; i++){
         resultArray.push(randomNumber(2,200))
     }
@@ -19,6 +23,7 @@ function playGame(){
     for(var i = 1 ; i <= 4 ; i++) {
         document.getElementById("option"+i).innerHTML = resultArray[i-1];
     }
+    document.getElementById("score").innerHTML = `${score} / ${total}` ;
 }
 
 function randomNumber(min,max){
@@ -26,22 +31,21 @@ function randomNumber(min,max){
 }
 
 function checkAnswer(option){
-     message = document.getElementById("message");
+    total++;
      option.innerText == result ? rightAnswer(option) : wrongAnswer(option);
 }
 
 function rightAnswer(option){
-    message.innerHTML = "Correct";
-    message.className += " correct";
-    option.className += " correct";
+   score++;
+   option.className += " correct";
+   document.getElementById("score").innerHTML = `${score} / ${total}` ;
 }
 
 function wrongAnswer(option){
-    message.innerHTML = "Incorrect";
-    message.className += " incorrect";
-    findCorrectAnswer();
+    document.getElementById("score").innerHTML = `${score} / ${total}` ;
     option.className += " incorrect";
-}
+    findCorrectAnswer();
+   }
 
 function findCorrectAnswer(){
     var options = document.getElementsByClassName("option");
@@ -54,4 +58,11 @@ function findCorrectAnswer(){
         }
     }
     answer.className += " answer";
+}
+
+function playAgain(){
+    playGame();
+    for(var i = 1 ; i <= 4 ; i++) {
+        document.getElementById("option"+i).className = "option";
+    }
 }

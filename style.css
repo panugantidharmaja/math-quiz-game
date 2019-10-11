@@ -7,7 +7,6 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-   
 }
 
 .question {
@@ -34,7 +33,7 @@ body{
 .option{
     display: flex;
     padding: 10px;
-    background-color: #ac8daf;
+    background-color: #484c7f;
     color: #ffffff;
     margin: 2%; 
     height: 150px;
@@ -62,10 +61,6 @@ body{
     border: thin solid #ffffff;
 }
 
-.message {
-    font-size : 3rem;
-    color: #ffffff;
-}
 
 .correct {
     background-color: #42b883;
@@ -78,4 +73,24 @@ body{
 .answer{
     background-color: #42b883;
     color:white;
+}
+
+.score{
+    position: absolute;
+    left: 90%;
+    top: 10%;
+    padding: 10px;
+    border-radius: 10%; 
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #5c94bd;
+}
+
+.play-again{
+    background-color: #42b883;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
