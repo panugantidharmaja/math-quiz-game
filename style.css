@@ -1,4 +1,6 @@
-
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
 .quiz-content{
     background-color: #f1d4d4;
     padding: 8%;
@@ -12,8 +14,7 @@
     font-size: 2.5rem;
     color: #484c7f;
     font-weight: 500;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
+ }
 
 .text-info {
     font-size: 3rem;
@@ -49,8 +50,6 @@
 .option:hover{
     display: flex;
     padding: 10px;
-    color: #ac8daf;
-    background-color: #ffffff;
     margin: 2%; 
     height: 150px;
     width: 150px; 
@@ -60,5 +59,23 @@
     font-size: 6rem;
     border-radius: 50%;
     cursor: pointer;
+    border: thin solid #ffffff;
 }
 
+.message {
+    font-size : 3rem;
+    color: #ffffff;
+}
+
+.correct {
+    background-color: #42b883;
+}
+
+.incorrect {
+    background-color: #f0134d;
+}
+
+.answer{
+    background-color: #42b883;
+    color:white;
+}
